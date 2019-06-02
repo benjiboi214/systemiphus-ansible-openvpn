@@ -50,3 +50,9 @@
     sysctl_set: true
     state: present
     reload: true
+
+- name: Enable OpenVPN service
+  command: systemctl enable {{ openvpn_service }}
+
+- name: Start OpenVPN service
+  command: systemctl start {{ openvpn_service }}

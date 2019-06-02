@@ -34,7 +34,5 @@
       listen: openvpn save iptables
 
 - name: Restart OpenVPN service
-  service:
-    name: "{{ openvpn_service }}"
-    state: restarted
+  command: systemctl restart {{ openvpn_service }}
   listen: openvpn restart
